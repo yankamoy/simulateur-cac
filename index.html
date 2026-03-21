@@ -197,5 +197,13 @@ BAREME.forEach((b,i)=>{const h1=Math.round(b.hMin*mj),h2=Math.round(b.hMax*mj);c
 function toggleDetail(){document.getElementById('detail-section').classList.toggle('show')}
 updateCalc();
 </script>
+  <script>
+// Auto-resize iframe parent
+function sendHeight() {
+  const h = document.body.scrollHeight;
+  window.parent.postMessage({iframeHeight: h}, '*');
+}
+setInterval(sendHeight, 500);
+</script>
 </body>
 </html>
